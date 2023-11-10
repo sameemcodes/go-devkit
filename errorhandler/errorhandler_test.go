@@ -6,7 +6,7 @@ import (
     "os"
     "testing"
 
-    "/go-devkit/csv/csvmodule"
+    "go-devkit/csv/csvmodule"
 )
 
 func TestHandleError(t *testing.T) {
