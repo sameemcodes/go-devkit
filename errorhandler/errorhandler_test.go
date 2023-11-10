@@ -6,7 +6,7 @@ import (
     "os"
     "testing"
 
-    "go-devkit/csv/csvmodule"
+    "go-devkit/csv"
 )
 
 func TestHandleError(t *testing.T) {
@@ -17,7 +17,7 @@ func TestHandleError(t *testing.T) {
     HandleError(err, "additional", "data")
 
     // Read the error file
-    data, readErr := csvmodule.ReadCSV(errorFile)
+    data, readErr := csvmodule.ReadCSV(errorFile, 1)
     if readErr != nil {
         t.Fatal(readErr)
     }
