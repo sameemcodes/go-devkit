@@ -5,6 +5,7 @@ import (
     "encoding/csv"
     "os"
     "sync"
+	"io" 
 )
 
 // ReadCSV reads a CSV file concurrently
@@ -55,10 +56,9 @@ func ReadCSV(filename string, maxGoroutines int) ([][]string, error) {
 		return nil, err
 	}
 }
-
 // WriteCSV writes data to a CSV file concurrently
 func WriteCSV(data [][]string, filename string, maxGoroutines int) error {
-    file, err := os.Create(filename)
+    file, err := os.OpenFile(filename, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
     if err != nil {
         return err
     }
