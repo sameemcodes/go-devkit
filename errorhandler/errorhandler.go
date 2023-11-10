@@ -5,7 +5,7 @@ import (
     "fmt"
     "time"
 
-    "github.com/sameemcodes/go-devkit/csvmodule"
+    "go-devkit/csv/csvmodule"
 )
 
 var (
